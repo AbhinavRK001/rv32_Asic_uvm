@@ -1,0 +1,26 @@
+# Simulation / build output
+*.log
+*.vcd
+*.fst
+*.wlf
+*.shm
+*.trn
+*.dsn
+*.key
+
+# Verilator
+obj_dir/
+coverage.dat
+coverage_dir/
+
+# Cadence
+INCA_libs/
+*.history
+*.swp
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
