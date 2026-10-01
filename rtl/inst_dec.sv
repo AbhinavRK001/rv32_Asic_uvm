@@ -6,8 +6,9 @@ logic alusrc;
 logic branch;
 logic jump;
 logic [3:0] aluop;
+logic [3:0] imm_type;
 modport dec(
-output regwrite, memread, memwrite, alusrc, branch, jump,aluop);
+output regwrite, memread, memwrite, alusrc, branch, jump,aluop,imm_type);
  modport ctrl(
         input regwrite,
         input memread,
@@ -15,7 +16,8 @@ output regwrite, memread, memwrite, alusrc, branch, jump,aluop);
         input alusrc,
         input branch,
         input jump,
-        input aluop
+        input aluop,
+        input imm_type
     );
 endinterface
 
@@ -33,6 +35,7 @@ always_comb begin
  opcode = inp.instr[6:0];
  funct3 = inp.instr[14:12];
  funct7 = inp.instr[31:25];
+dc.imm_type = '0;
 case(opcode)
 '0010011 : begin
                if(funct3 == '0)begin
@@ -43,6 +46,7 @@ case(opcode)
                dc.branch = '0;
                dc.jump = '0;
                dc.aluop = '0000;
+               dc.imm_type = '0000;
                end
                else if(funct3 == '111)begin 
                dc.regwrite = '1;
@@ -52,6 +56,7 @@ case(opcode)
                dc.branch = '0;
                dc.jump = '0;
                dc.aluop = '0010;
+               dc.imm_type = '0000;
                end
             else if(funct3 == '110)begin
                dc.regwrite = '1;
@@ -61,6 +66,7 @@ case(opcode)
                dc.branch = '0;
                dc.jump = '0;
                dc.aluop = '0011;
+               dc.imm_type = '0000;
             end
            else if(funct3 == '100)begin
                dc.regwrite = '1;
@@ -70,6 +76,7 @@ case(opcode)
                dc.branch = '0;
                dc.jump = '0;
                dc.aluop = '0100;
+               dc.imm_type = '0000;
                end  
        end 
 
