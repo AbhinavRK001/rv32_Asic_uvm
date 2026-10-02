@@ -26,7 +26,7 @@ endinterface
 
 module regfile(
 input clk,
-regmem.regi regs
+regmem.regi regs,
  dec_if.ctrl ctrl);
 logic[31:0]register[0:31];
 
