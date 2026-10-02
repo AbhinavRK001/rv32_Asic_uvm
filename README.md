@@ -55,7 +55,7 @@ Beyond functional RTL, the project's objective is to carry the design through a 
 | Stage | Status |
 |---|---|
 | ISA subset and microarchitecture definition | Complete |
-| Core RTL blocks | In progress |
+| Core RTL blocks | Completed |
 | Data memory | Complete |
 | Single-cycle integration | Planned |
 | Module-level testbenches | Planned |
