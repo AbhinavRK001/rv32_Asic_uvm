@@ -1,0 +1,273 @@
+
+           RTLFlow NCLaunch / Xcelium-style Simulation
+      Version 2.12.1 (Firmware) · Verilator 5.032 · Icarus 12.0
+──────────────────────────────────────────────────────────────────────────────
+  Engines   verilator ✓   iverilog ✓   default: verilator
+  RISC-V    no compiler (sw_build needs gcc-riscv64-unknown-elf or clang + lld)
+  Log file  .rtlflow/logs/nclaunch.log1
+──────────────────────────────────────────────────────────────────────────────
+Sourcing rv32_top.sv
+nclaunch> module rv32_sv (
+**ERROR: (RFN-CMD-404): Unknown command 'module'.  Type 'help' for the command list.
+nclaunch> input logic clk,
+**ERROR: (RFN-CMD-404): Unknown command 'input'.  Type 'help' for the command list.
+nclaunch> input logic rst
+**ERROR: (RFN-CMD-404): Unknown command 'input'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // INTERFACES
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> a_if      alu_bus()
+**ERROR: (RFN-CMD-404): Unknown command 'a_if'.  Type 'help' for the command list.
+nclaunch> branif    bran_bus()
+**ERROR: (RFN-CMD-404): Unknown command 'branif'.  Type 'help' for the command list.
+nclaunch> dif       dif_bus()
+**ERROR: (RFN-CMD-404): Unknown command 'dif'.  Type 'help' for the command list.
+nclaunch> imem_if   imem_bus()
+**ERROR: (RFN-CMD-404): Unknown command 'imem_if'.  Type 'help' for the command list.
+nclaunch> immgen_if immgen_bus()
+**ERROR: (RFN-CMD-404): Unknown command 'immgen_if'.  Type 'help' for the command list.
+nclaunch> dec_if    dec_bus()
+**ERROR: (RFN-CMD-404): Unknown command 'dec_if'.  Type 'help' for the command list.
+nclaunch> pc_if     pc_bus()
+**ERROR: (RFN-CMD-404): Unknown command 'pc_if'.  Type 'help' for the command list.
+nclaunch> regmem    reg_bus()
+**ERROR: (RFN-CMD-404): Unknown command 'regmem'.  Type 'help' for the command list.
+nclaunch> wb_if     wb_bus()
+**ERROR: (RFN-CMD-404): Unknown command 'wb_if'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // PC
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> pc pc_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'pc'.  Type 'help' for the command list.
+nclaunch> .clk  (clk),
+**ERROR: (RFN-CMD-404): Unknown command '.clk'.  Type 'help' for the command list.
+nclaunch> .rst  (rst),
+**ERROR: (RFN-CMD-404): Unknown command '.rst'.  Type 'help' for the command list.
+nclaunch> .pcbus(pc_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.pcbus(pc_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> sel sel_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'sel'.  Type 'help' for the command list.
+nclaunch> .pcbus(pc_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.pcbus(pc_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // INSTRUCTION MEMORY
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> ins_mem ins_mem_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'ins_mem'.  Type 'help' for the command list.
+nclaunch> .imm(imem_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.imm(imem_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // INSTRUCTION DECODER
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> decoder decoder_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'decoder'.  Type 'help' for the command list.
+nclaunch> .inp(immgen_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.inp(immgen_bus),'.  Type 'help' for the command list.
+nclaunch> .dc (dec_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.dc'.  Type 'help' for the command list.
+nclaunch> .rdc(reg_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.rdc(reg_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // IMMEDIATE GENERATOR
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> imm_gen imm_gen_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'imm_gen'.  Type 'help' for the command list.
+nclaunch> .iif (immgen_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.iif'.  Type 'help' for the command list.
+nclaunch> .ctrl(dec_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.ctrl(dec_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // REGISTER FILE
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> regfile regfile_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'regfile'.  Type 'help' for the command list.
+nclaunch> .clk (clk),
+**ERROR: (RFN-CMD-404): Unknown command '.clk'.  Type 'help' for the command list.
+nclaunch> .regs(reg_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.regs(reg_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ALU
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> alu alu_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'alu'.  Type 'help' for the command list.
+nclaunch> .al(alu_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.al(alu_bus),'.  Type 'help' for the command list.
+nclaunch> .dc(dec_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.dc(dec_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ALU B MUX
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // Selects between rs2 and immediate
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> mux_alu malu_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'mux_alu'.  Type 'help' for the command list.
+nclaunch> .b(alu_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.b(alu_bus),'.  Type 'help' for the command list.
+nclaunch> .i(immgen_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.i(immgen_bus),'.  Type 'help' for the command list.
+nclaunch> .r(reg_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.r(reg_bus),'.  Type 'help' for the command list.
+nclaunch> .c(dec_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.c(dec_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ALU A MUX
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // Selects between rs1 and PC
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> mux_alu_a malua_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'mux_alu_a'.  Type 'help' for the command list.
+nclaunch> .am (alu_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.am'.  Type 'help' for the command list.
+nclaunch> .r  (reg_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.r'.  Type 'help' for the command list.
+nclaunch> .pc (pc_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.pc'.  Type 'help' for the command list.
+nclaunch> .c  (dec_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.c'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // DATA MEMORY
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> dm dm_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'dm'.  Type 'help' for the command list.
+nclaunch> .clk(clk),
+**ERROR: (RFN-CMD-404): Unknown command '.clk(clk),'.  Type 'help' for the command list.
+nclaunch> .dm (dif_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.dm'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // WRITEBACK
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> wb_mux wb_mux_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'wb_mux'.  Type 'help' for the command list.
+nclaunch> .wb  (wb_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.wb'.  Type 'help' for the command list.
+nclaunch> .am  (alu_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.am'.  Type 'help' for the command list.
+nclaunch> .dm  (dif_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.dm'.  Type 'help' for the command list.
+nclaunch> .pc  (pc_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.pc'.  Type 'help' for the command list.
+nclaunch> .ctrl(dec_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.ctrl(dec_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // BRANCH COMPARATOR
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> branch branch_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'branch'.  Type 'help' for the command list.
+nclaunch> .bin (bran_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.bin'.  Type 'help' for the command list.
+nclaunch> .dat (reg_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.dat'.  Type 'help' for the command list.
+nclaunch> .ctrl(dec_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.ctrl(dec_bus)'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // BRANCH / JUMP TARGET
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> bt bt_inst (
+**ERROR: (RFN-CMD-404): Unknown command 'bt'.  Type 'help' for the command list.
+nclaunch> .bin (bran_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.bin'.  Type 'help' for the command list.
+nclaunch> .ctrl(dec_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.ctrl(dec_bus),'.  Type 'help' for the command list.
+nclaunch> .bp  (pc_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.bp'.  Type 'help' for the command list.
+nclaunch> .aimm(immgen_bus),
+**ERROR: (RFN-CMD-404): Unknown command '.aimm(immgen_bus),'.  Type 'help' for the command list.
+nclaunch> .dat (reg_bus)
+**ERROR: (RFN-CMD-404): Unknown command '.dat'.  Type 'help' for the command list.
+nclaunch> )
+**ERROR: (RFN-CMD-404): Unknown command ')'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // TOP-LEVEL CONNECTIONS
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // ============================================================
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> // PC -> Instruction Memory
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> assign imem_bus.pc = pc_bus.pc
+**ERROR: (RFN-CMD-404): Unknown command 'assign'.  Type 'help' for the command list.
+nclaunch> // Instruction Memory -> Decoder / Immediate Generator
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> assign immgen_bus.instr = imem_bus.imem
+**ERROR: (RFN-CMD-404): Unknown command 'assign'.  Type 'help' for the command list.
+nclaunch> // ALU -> Data Memory address
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> assign dif_bus.address = alu_bus.result
+**ERROR: (RFN-CMD-404): Unknown command 'assign'.  Type 'help' for the command list.
+nclaunch> // Register rs2 -> Data Memory write data
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> assign dif_bus.write_data = reg_bus.read_data2
+**ERROR: (RFN-CMD-404): Unknown command 'assign'.  Type 'help' for the command list.
+nclaunch> // Decoder -> Data Memory control
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> assign dif_bus.read_enable  = dec_bus.memread
+**ERROR: (RFN-CMD-404): Unknown command 'assign'.  Type 'help' for the command list.
+nclaunch> assign dif_bus.write_enable = dec_bus.memwrite
+**ERROR: (RFN-CMD-404): Unknown command 'assign'.  Type 'help' for the command list.
+nclaunch> // Writeback -> Register File
+**ERROR: (RFN-CMD-404): Unknown command '//'.  Type 'help' for the command list.
+nclaunch> assign reg_bus.write_data = wb_bus.wb_result
+**ERROR: (RFN-CMD-404): Unknown command 'assign'.  Type 'help' for the command list.
+nclaunch> endmodule
+**ERROR: (RFN-CMD-404): Unknown command 'endmodule'.  Type 'help' for the command list.
+**WARN: (RFN-SRC-001): rv32_top.sv: one or more commands failed
+nclaunch 1> exot
+**ERROR: (RFN-CMD-404): Unknown command 'exot'.  Type 'help' for the command list.
+nclaunch 2> exit

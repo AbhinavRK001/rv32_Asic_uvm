@@ -1,0 +1,24 @@
+
+           RTLFlow NCLaunch / Xcelium-style Simulation
+      Version 2.12.1 (Firmware) · Verilator 5.032 · Icarus 12.0
+──────────────────────────────────────────────────────────────────────────────
+  Engines   verilator ✓   iverilog ✓   default: verilator
+  RISC-V    no compiler (sw_build needs gcc-riscv64-unknown-elf or clang + lld)
+  Log file  .rtlflow/logs/nclaunch.log5
+  Remembered: design rv32_top.sv · tb  · top ?
+──────────────────────────────────────────────────────────────────────────────
+nclaunch 1> compile rv32_top.sv
+  file: rv32_top.sv  [design]
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:1:10: Cannot find include file: 'pc.sv'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:1:10: This may be because there's no search path specified with -I<dir>.
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:2:10: Cannot find include file: 'alu.sv'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:3:10: Cannot find include file: 'imem.sv'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:4:10: Cannot find include file: 'immgen.sv'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:5:10: Cannot find include file: 'inst_dec.sv'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:6:10: Cannot find include file: 'register_file.sv'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:7:10: Cannot find include file: 'data_mem.sv'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:8:10: Cannot find include file: 'wb_mux.sv'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:9:10: Cannot find include file: 'branch.sv'
+%Error: Exiting due to 10 error(s)
+**ERROR: (RFN-VLOG-001): 11 error(s) in HDL
+nclaunch 2> exit

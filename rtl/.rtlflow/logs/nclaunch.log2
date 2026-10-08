@@ -1,0 +1,12 @@
+
+           RTLFlow NCLaunch / Xcelium-style Simulation
+      Version 2.12.1 (Firmware) · Verilator 5.032 · Icarus 12.0
+──────────────────────────────────────────────────────────────────────────────
+  Engines   verilator ✓   iverilog ✓   default: verilator
+  RISC-V    no compiler (sw_build needs gcc-riscv64-unknown-elf or clang + lld)
+  Log file  .rtlflow/logs/nclaunch.log2
+──────────────────────────────────────────────────────────────────────────────
+nclaunch 1> gui
+  NCLaunch GUI open (pid 30051) — same session as this shell
+nclaunch: GUI closed — gui_show reopens it
+nclaunch 2> exit

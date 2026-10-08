@@ -1,0 +1,5 @@
+rtlflow 1> gui
+RTLFlow Launcher opened
+rtlflow 2> compile rv32_top.sv
+**ERROR: (RFS-CMD-404): Unknown command 'compile'.  Type 'help' for the command list.
+rtlflow 3> nclaunch

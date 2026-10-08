@@ -1,0 +1,95 @@
+
+           RTLFlow NCLaunch / Xcelium-style Simulation
+      Version 2.12.1 (Firmware) · Verilator 5.032 · Icarus 12.0
+──────────────────────────────────────────────────────────────────────────────
+  Engines   verilator ✓   iverilog ✓   default: verilator
+  RISC-V    no compiler (sw_build needs gcc-riscv64-unknown-elf or clang + lld)
+  Log file  .rtlflow/logs/nclaunch.log4
+  Remembered: design rv32_top.sv · tb  · top ?
+──────────────────────────────────────────────────────────────────────────────
+nclaunch 1> helo
+**ERROR: (RFN-CMD-404): Unknown command 'helo'.  Type 'help' for the command list.
+nclaunch 2> help
+─── Compile ──────────────────────────────────────────────────────────────────
+  compile               Lint/parse the current design + testbench sources
+  elaborate             Build the simulation executable (ncelab, xmelab)
+  read_hdl              Add design sources (ncvlog, xmvlog)
+  read_tb               Add testbench sources
+─── Simulate ─────────────────────────────────────────────────────────────────
+  simulate              Run the simulation (-gui opens waves afterwards) (ncsim, xmsim, run)
+  xrun                  One-shot compile+elaborate+simulate (irun, ncverilog)
+─── Software ─────────────────────────────────────────────────────────────────
+  report_memories       Memories in the design that a program can be loaded into (sw_memories)
+  sw_build              Compile a bare-metal RISC-V program with RTLFlow's start-up code and runtime (riscv_build)
+  sw_load               Put a program into a memory of the design for the next simulate (load_program)
+  sw_test               Run the riscv-tests ISA suite (rv32ui/um/ua/uc for -march) on the core (riscv_tests)
+─── UVM ──────────────────────────────────────────────────────────────────────
+  list_tests            UVM tests found in the testbench sources
+  regress               Run tests × random seeds, summary + merged functional coverage
+  report_uvm            UVM messages of the last run
+  run_cocotb            Run a Python UVM (pyuvm + cocotb) testbench
+  run_test              Run a UVM test (builds first if needed)
+  set_uvm               Compile with the UVM library (auto = when the TB imports uvm_pkg)
+  uvm_gen               Generate a complete UVM testbench (agent, scoreboard, coverage, tests) for a DUT
+─── Coverage ─────────────────────────────────────────────────────────────────
+  report_coverage       Functional (RFCOV) + code coverage
+  set_coverage          Verilator line/toggle code coverage (--coverage)
+─── Waves ────────────────────────────────────────────────────────────────────
+  simvision             Open the waveform viewer (GTKWave / Surfer) (waves, gtkwave)
+─── Session ──────────────────────────────────────────────────────────────────
+  clear_sources         Forget all sources
+  set_engine            Choose simulator
+  status                Simulation setup
+─── Shell ────────────────────────────────────────────────────────────────────
+  cd                    Change directory
+  exit                  Leave this tool (quit, exit_tool)
+  export                Set an environment variable (bash style)
+  getenv                Print an environment variable
+  help                  List commands or show help for one
+  history               Show command history
+  man                   Show usage for a command
+  puts                  Print text
+  pwd                   Print working directory
+  set                   Set or print a variable
+  set_theme             GUI colour theme for every RTLFlow window (open ones switch within ~2 s) (theme)
+  setenv                Set an environment variable
+  sh                    Run a Unix command
+  source                Run a script of commands
+─── GUI ──────────────────────────────────────────────────────────────────────
+  gui_hide              Close the GUI (session keeps running)
+  gui_show              Open this tool's GUI (same session) (gui, win)
+
+  man <command> for usage · any unknown line is an error unless the tool forwards it to its backend
+nclaunch 3> compile rv32_top.sv
+  file: rv32_top.sv  [design]
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:160:26: Dotted reference to instance that refers to missing module/interface: 'pc_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:160:33: Can't find definition of 'pc' in dotted variable: 'pc_bus.pc'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:160:12: Dotted reference to instance that refers to missing module/interface: 'imem_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:160:21: Can't find definition of 'pc' in dotted variable: 'imem_bus.pc'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:163:31: Dotted reference to instance that refers to missing module/interface: 'imem_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:163:40: Can't find definition of 'imem' in dotted variable: 'imem_bus.imem'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:163:12: Dotted reference to instance that refers to missing module/interface: 'immgen_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:163:23: Can't find definition of 'instr' in dotted variable: 'immgen_bus.instr'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:167:30: Dotted reference to instance that refers to missing module/interface: 'a_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:167:38: Can't find definition of 'result' in dotted variable: 'alu_bus.result'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:167:12: Dotted reference to instance that refers to missing module/interface: 'dif'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:167:20: Can't find definition of 'address' in dotted variable: 'dif_bus.address'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:170:33: Dotted reference to instance that refers to missing module/interface: 'regmem'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:170:41: Can't find definition of 'read_data2' in dotted variable: 'reg_bus.read_data2'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:170:12: Dotted reference to instance that refers to missing module/interface: 'dif'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:170:20: Can't find definition of 'write_data' in dotted variable: 'dif_bus.write_data'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:173:35: Dotted reference to instance that refers to missing module/interface: 'dec_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:173:43: Can't find definition of 'memread' in dotted variable: 'dec_bus.memread'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:173:12: Dotted reference to instance that refers to missing module/interface: 'dif'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:173:20: Can't find definition of 'read_enable' in dotted variable: 'dif_bus.read_enable'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:174:35: Dotted reference to instance that refers to missing module/interface: 'dec_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:174:43: Can't find definition of 'memwrite' in dotted variable: 'dec_bus.memwrite'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:174:12: Dotted reference to instance that refers to missing module/interface: 'dif'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:174:20: Can't find definition of 'write_enable' in dotted variable: 'dif_bus.write_enable'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:178:33: Dotted reference to instance that refers to missing module/interface: 'wb_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:178:40: Can't find definition of 'wb_result' in dotted variable: 'wb_bus.wb_result'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:178:12: Dotted reference to instance that refers to missing module/interface: 'regmem'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:178:20: Can't find definition of 'write_data' in dotted variable: 'reg_bus.write_data'
+%Error: Exiting due to 28 error(s)
+**ERROR: (RFN-VLOG-001): 29 error(s) in HDL
+nclaunch 4> exit

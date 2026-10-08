@@ -1,0 +1,135 @@
+#######################################################
+#  RTLFlow nclaunch command log — Tue Oct 06 11:18:30 2026
+#######################################################
+module rv32_sv (   ;# from source rv32_top.sv
+input logic clk,   ;# from source rv32_top.sv
+input logic rst   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// INTERFACES   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+a_if      alu_bus()   ;# from source rv32_top.sv
+branif    bran_bus()   ;# from source rv32_top.sv
+dif       dif_bus()   ;# from source rv32_top.sv
+imem_if   imem_bus()   ;# from source rv32_top.sv
+immgen_if immgen_bus()   ;# from source rv32_top.sv
+dec_if    dec_bus()   ;# from source rv32_top.sv
+pc_if     pc_bus()   ;# from source rv32_top.sv
+regmem    reg_bus()   ;# from source rv32_top.sv
+wb_if     wb_bus()   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// PC   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+pc pc_inst (   ;# from source rv32_top.sv
+.clk  (clk),   ;# from source rv32_top.sv
+.rst  (rst),   ;# from source rv32_top.sv
+.pcbus(pc_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+sel sel_inst (   ;# from source rv32_top.sv
+.pcbus(pc_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// INSTRUCTION MEMORY   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+ins_mem ins_mem_inst (   ;# from source rv32_top.sv
+.imm(imem_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// INSTRUCTION DECODER   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+decoder decoder_inst (   ;# from source rv32_top.sv
+.inp(immgen_bus),   ;# from source rv32_top.sv
+.dc (dec_bus),   ;# from source rv32_top.sv
+.rdc(reg_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// IMMEDIATE GENERATOR   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+imm_gen imm_gen_inst (   ;# from source rv32_top.sv
+.iif (immgen_bus),   ;# from source rv32_top.sv
+.ctrl(dec_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// REGISTER FILE   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+regfile regfile_inst (   ;# from source rv32_top.sv
+.clk (clk),   ;# from source rv32_top.sv
+.regs(reg_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// ALU   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+alu alu_inst (   ;# from source rv32_top.sv
+.al(alu_bus),   ;# from source rv32_top.sv
+.dc(dec_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ALU B MUX   ;# from source rv32_top.sv
+// Selects between rs2 and immediate   ;# from source rv32_top.sv
+mux_alu malu_inst (   ;# from source rv32_top.sv
+.b(alu_bus),   ;# from source rv32_top.sv
+.i(immgen_bus),   ;# from source rv32_top.sv
+.r(reg_bus),   ;# from source rv32_top.sv
+.c(dec_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ALU A MUX   ;# from source rv32_top.sv
+// Selects between rs1 and PC   ;# from source rv32_top.sv
+mux_alu_a malua_inst (   ;# from source rv32_top.sv
+.am (alu_bus),   ;# from source rv32_top.sv
+.r  (reg_bus),   ;# from source rv32_top.sv
+.pc (pc_bus),   ;# from source rv32_top.sv
+.c  (dec_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// DATA MEMORY   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+dm dm_inst (   ;# from source rv32_top.sv
+.clk(clk),   ;# from source rv32_top.sv
+.dm (dif_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// WRITEBACK   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+wb_mux wb_mux_inst (   ;# from source rv32_top.sv
+.wb  (wb_bus),   ;# from source rv32_top.sv
+.am  (alu_bus),   ;# from source rv32_top.sv
+.dm  (dif_bus),   ;# from source rv32_top.sv
+.pc  (pc_bus),   ;# from source rv32_top.sv
+.ctrl(dec_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// BRANCH COMPARATOR   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+branch branch_inst (   ;# from source rv32_top.sv
+.bin (bran_bus),   ;# from source rv32_top.sv
+.dat (reg_bus),   ;# from source rv32_top.sv
+.ctrl(dec_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// BRANCH / JUMP TARGET   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+bt bt_inst (   ;# from source rv32_top.sv
+.bin (bran_bus),   ;# from source rv32_top.sv
+.ctrl(dec_bus),   ;# from source rv32_top.sv
+.bp  (pc_bus),   ;# from source rv32_top.sv
+.aimm(immgen_bus),   ;# from source rv32_top.sv
+.dat (reg_bus)   ;# from source rv32_top.sv
+)   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// TOP-LEVEL CONNECTIONS   ;# from source rv32_top.sv
+// ============================================================   ;# from source rv32_top.sv
+// PC -> Instruction Memory   ;# from source rv32_top.sv
+assign imem_bus.pc = pc_bus.pc   ;# from source rv32_top.sv
+// Instruction Memory -> Decoder / Immediate Generator   ;# from source rv32_top.sv
+assign immgen_bus.instr = imem_bus.imem   ;# from source rv32_top.sv
+// ALU -> Data Memory address   ;# from source rv32_top.sv
+assign dif_bus.address = alu_bus.result   ;# from source rv32_top.sv
+// Register rs2 -> Data Memory write data   ;# from source rv32_top.sv
+assign dif_bus.write_data = reg_bus.read_data2   ;# from source rv32_top.sv
+// Decoder -> Data Memory control   ;# from source rv32_top.sv
+assign dif_bus.read_enable  = dec_bus.memread   ;# from source rv32_top.sv
+assign dif_bus.write_enable = dec_bus.memwrite   ;# from source rv32_top.sv
+// Writeback -> Register File   ;# from source rv32_top.sv
+assign reg_bus.write_data = wb_bus.wb_result   ;# from source rv32_top.sv
+endmodule   ;# from source rv32_top.sv
+exot
+exit

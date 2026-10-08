@@ -1,0 +1,42 @@
+
+           RTLFlow NCLaunch / Xcelium-style Simulation
+      Version 2.12.1 (Firmware) · Verilator 5.032 · Icarus 12.0
+──────────────────────────────────────────────────────────────────────────────
+  Engines   verilator ✓   iverilog ✓   default: verilator
+  RISC-V    no compiler (sw_build needs gcc-riscv64-unknown-elf or clang + lld)
+  Log file  .rtlflow/logs/nclaunch.log3
+──────────────────────────────────────────────────────────────────────────────
+nclaunch 1> read_hdl -sv rv32_top.sv
+  file: rv32_top.sv  [design]
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:160:26: Dotted reference to instance that refers to missing module/interface: 'pc_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:160:33: Can't find definition of 'pc' in dotted variable: 'pc_bus.pc'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:160:12: Dotted reference to instance that refers to missing module/interface: 'imem_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:160:21: Can't find definition of 'pc' in dotted variable: 'imem_bus.pc'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:163:31: Dotted reference to instance that refers to missing module/interface: 'imem_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:163:40: Can't find definition of 'imem' in dotted variable: 'imem_bus.imem'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:163:12: Dotted reference to instance that refers to missing module/interface: 'immgen_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:163:23: Can't find definition of 'instr' in dotted variable: 'immgen_bus.instr'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:167:30: Dotted reference to instance that refers to missing module/interface: 'a_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:167:38: Can't find definition of 'result' in dotted variable: 'alu_bus.result'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:167:12: Dotted reference to instance that refers to missing module/interface: 'dif'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:167:20: Can't find definition of 'address' in dotted variable: 'dif_bus.address'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:170:33: Dotted reference to instance that refers to missing module/interface: 'regmem'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:170:41: Can't find definition of 'read_data2' in dotted variable: 'reg_bus.read_data2'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:170:12: Dotted reference to instance that refers to missing module/interface: 'dif'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:170:20: Can't find definition of 'write_data' in dotted variable: 'dif_bus.write_data'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:173:35: Dotted reference to instance that refers to missing module/interface: 'dec_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:173:43: Can't find definition of 'memread' in dotted variable: 'dec_bus.memread'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:173:12: Dotted reference to instance that refers to missing module/interface: 'dif'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:173:20: Can't find definition of 'read_enable' in dotted variable: 'dif_bus.read_enable'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:174:35: Dotted reference to instance that refers to missing module/interface: 'dec_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:174:43: Can't find definition of 'memwrite' in dotted variable: 'dec_bus.memwrite'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:174:12: Dotted reference to instance that refers to missing module/interface: 'dif'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:174:20: Can't find definition of 'write_enable' in dotted variable: 'dif_bus.write_enable'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:178:33: Dotted reference to instance that refers to missing module/interface: 'wb_if'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:178:40: Can't find definition of 'wb_result' in dotted variable: 'wb_bus.wb_result'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:178:12: Dotted reference to instance that refers to missing module/interface: 'regmem'
+%Error: /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv:178:20: Can't find definition of 'write_data' in dotted variable: 'reg_bus.write_data'
+%Error: Exiting due to 28 error(s)
+**ERROR: (RFN-VLOG-001): 29 error(s) in HDL
+nclaunch 2> grep -R "interface pc_if" rtl
+nclaunch 3> exit

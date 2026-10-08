@@ -1,0 +1,2 @@
+read_verilog -sv   /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv
+hierarchy

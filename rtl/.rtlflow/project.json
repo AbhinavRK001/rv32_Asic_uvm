@@ -1,0 +1,59 @@
+{
+  "genus": {
+    "hdl": [
+      "/home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv"
+    ],
+    "hdl_lang": "sv",
+    "defines": [],
+    "incdirs": [],
+    "libs": [],
+    "lefs": [],
+    "top": "rv32_sv",
+    "stage": "read",
+    "sdc_lines": [],
+    "sdc_files": [],
+    "netlist": "",
+    "area": {},
+    "timing": {},
+    "cells": {},
+    "frontend": "yosys",
+    "fsm_recoding": false,
+    "hard_blocks": [],
+    "macros": [],
+    "effort": {
+      "generic": "medium",
+      "map": "medium",
+      "opt": "medium"
+    }
+  },
+  "top": "rv32_sv",
+  "updated": "2026-10-08 10:52:55",
+  "sim": {
+    "rtl": [
+      "/home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv"
+    ],
+    "tb": [],
+    "top": "",
+    "engine": "verilator",
+    "defines": [],
+    "incdirs": [],
+    "built": "",
+    "wave": "",
+    "result": "",
+    "timescale": "1ns/1ps",
+    "uvm": "auto",
+    "uvm_dpi": false,
+    "test": "",
+    "seed": "1",
+    "verbosity": "UVM_MEDIUM",
+    "coverage": false,
+    "plusargs": [],
+    "uvm_run": {},
+    "regress": [],
+    "sw_cfg": {},
+    "sw_slots": [],
+    "sw_timeout": 0,
+    "sw_test_mem": "",
+    "sw_monitor_sig": ""
+  }
+}

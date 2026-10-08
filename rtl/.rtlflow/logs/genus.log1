@@ -1,0 +1,26 @@
+
+           RTLFlow Genus(R) Synthesis Solution
+      Version 2.12.1 (Firmware) · logic synthesis: Yosys 0.52 · timing: OpenSTA
+──────────────────────────────────────────────────────────────────────────────
+  Yosys     /usr/bin/yosys
+  STA       /nix/store/q5ycjmn0d9awbcq05c75z2rmgwjgbc9g-opensta/bin/sta
+  Project   ~/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl
+  Log file  .rtlflow/logs/genus.log1
+  Cmd file  .rtlflow/logs/genus.cmd1
+──────────────────────────────────────────────────────────────────────────────
+  Type 'help' · 'gui_show' opens the Genus GUI · 'man <cmd>' for usage
+
+genus 1> read_hdl -sv rv32_top.sv
+  Reading SV file 'rv32_top.sv'
+[yosys read] 0.04s rc=0
+  Modules: rv32_sv
+genus 2> elaborate
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'rv32_sv'.
+ERROR: Module `\bt' referenced in module `\rv32_sv' in cell `\bt_inst' is not part of the design.
+ERROR: Module `\bt' referenced in module `\rv32_sv' in cell `\bt_inst' is not part of the design.
+  full log: .rtlflow/runs/synth/rv32_sv.elab.log
+[yosys elab] 0.02s rc=1
+**ERROR: (RFG-ELAB-002): Elaboration of 'rv32_sv' failed
+genus 3> exit
+genus: exiting · log .rtlflow/logs/genus.log1

@@ -1,0 +1,8 @@
+read_verilog -sv   /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/rv32_top.sv
+hierarchy -check -top rv32_sv
+proc
+opt_clean
+check
+write_rtlil /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/.rtlflow/runs/synth/rv32_sv.elab.il
+tee -o /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/.rtlflow/runs/synth/rv32_sv.elab.stat.txt stat
+write_json /home/abhinav/Desktop/SYSTEM_VERILOG/projects/rv32_Asic_uvm/rtl/.rtlflow/runs/synth/rv32_sv.elab.json

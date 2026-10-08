@@ -1,0 +1,6 @@
+#######################################################
+#  RTLFlow nclaunch command log — Thu Oct 08 10:35:24 2026
+#######################################################
+read_hdl -sv rv32_top.sv
+grep -R "interface pc_if" rtl
+exit
