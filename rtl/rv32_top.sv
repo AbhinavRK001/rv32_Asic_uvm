@@ -78,11 +78,11 @@ module rv32_sv (
     // REGISTER FILE
     // ============================================================
 
-    regfile regfile_inst (
-        .clk (clk),
-        .regs(reg_bus)
-    );
-
+   regfile regfile_inst(
+    .clk (clk),
+    .regs(reg_bus),
+    .ctrl(dec_bus)
+);
 
     // ============================================================
     // ALU
